@@ -1,14 +1,15 @@
 import React from 'react';
-import WaitlistForm from './components/WaitlistForm';
+import HeaderCemBio from './components/HeaderCemBio/HeaderCemBio';
+import Footer from './components/Footer/Footer';
+import Landing from './pages/Landing/Landing';
 import './App.css';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <h1>CemBio</h1>
-        <WaitlistForm />
-      </header>
+      <HeaderCemBio />
+      <Landing />
+      <Footer />
     </div>
   );
 }

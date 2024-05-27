@@ -1,0 +1,54 @@
+/* WaitlistForm.css */
+.form-waitlist {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color:#020101;
+    padding: 3%;
+    border-radius: 20px;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    margin: 2rem auto;
+}
+
+.form-waitlist h2, p{
+    color: #fafafa;
+}
+
+.form-waitlist h2{
+    font-size: 40px;
+    margin-bottom: 0;
+    margin-top: 0;
+}
+
+.form-waitlist p{
+    font-size: 18px;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.form-waitlist input[type="email"] {
+    width: 90%;
+    padding: 0.8rem;
+    margin-bottom: 2rem;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    font-size: 18px;
+}
+
+.form-waitlist button {
+    width: 80%;
+    padding: 0.8rem;
+    background-color: #F8AF50;
+    color: #fafafa;
+    border: none;
+    border-radius: 50px;
+    font-size: 20px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.form-waitlist button:hover {
+    background-color: #F68141;
+}

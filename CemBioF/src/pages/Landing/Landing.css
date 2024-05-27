@@ -1,0 +1,140 @@
+.canvas{
+    margin-top: 110px;
+    height: fit-content;
+    width: auto;
+    background-image: url('../../assets/images/5.png');
+    background-size: cover;
+    background-position: center;
+    height: 65vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8%;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.25);
+}
+
+.texts-landing{
+    padding: 15%;
+}
+
+.canvas h1{
+    color: #FAFAFA;
+    font-size: 5rem;
+    font-weight: 800;
+    text-align: center;
+    margin-bottom: 0;
+}
+
+.canvas p{
+    margin-top: 0;
+    color: #020101;
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+.solution{
+    padding: 0% 8%;
+}
+
+.solution h2{
+    color: #020101;
+    font-size: 3.5rem;
+    font-weight: 700;
+}
+
+.cards {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap; 
+}
+
+.card {
+    background-color: #FAFAFA;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 30px;
+    margin-right: 5%;
+    margin-bottom: 20px;
+    padding: 3%;
+    width: calc(33.33% - 10%);
+}
+
+.card:last-child {
+    margin-right: 0;
+}
+
+.card img {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+    height: auto;
+    width: 60%;
+}
+
+.card h3, .card p {
+    color: #020101;
+    text-align: center;
+}
+
+.card h3 {
+    font-size: 2rem;
+}
+
+.card p {
+    font-size: 1.1rem;
+}
+
+@media screen and (max-width: 768px) {
+    .card {
+        width: calc(40% - 5%); 
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .card {
+        width: 100%; 
+        margin-right: 0;
+    }
+}
+
+.video-form {
+    display: flex;
+    flex-direction: row; 
+    justify-content: space-between;
+    align-items: center;
+    margin: 0% 8%;
+}
+
+.video-container {
+    width: 75%;
+    margin-right: 5%;
+}
+
+.video-container video {
+    width: 100%;
+    height: auto;
+}
+
+.WaitlistForm {
+    width: 15%;
+}
+
+@media screen and (max-width: 1200px) {
+    .video-form {
+        flex-direction: column; 
+        align-items: flex-start; 
+    }
+
+    .video-container {
+        width: 100%; 
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+
+    .WaitlistForm {
+        width: 100%;
+    }
+}
+
+
+

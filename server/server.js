@@ -8,10 +8,10 @@ const Subscriber = require('./models/Subscriber');
 const app = express();
 const port = 5000;
 
-const dbURI = 'mongodb+srv://camjmend:X1Aczu92AoIvk9Ci@cembio.5muwcgy.mongodb.net/?retryWrites=true&w=majority&appName=CemBio';
+const dbURI = 'jjj';
 
 
-// Conectar a MongoDB Atlas
+// MongoDB Atlas
 mongoose.connect(dbURI, {
     useNewUrlParser: true,
     useUnifiedTopology: true
@@ -26,12 +26,12 @@ db.once('open', () => {
 app.use(cors());
 app.use(bodyParser.json());
 
-// Configurar el transportador de Nodemailer
+// Nodemailer
 const transporter = nodemailer.createTransport({
-    service: 'gmail', // Puedes usar otros servicios como Yahoo, Outlook, etc.
+    service: 'gmail', 
     auth: {
-        user: 'cembio.contact@gmail.com', // Reemplaza con tu correo
-        pass: 'CemBio1709'   // Reemplaza con tu contraseña de correo
+        user: 'jjj', 
+        pass: 'jjj'
     }
 });
 

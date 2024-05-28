@@ -75,16 +75,17 @@ app.post('/api/subscribe', async (req, res) => {
         
         await sendEmail(email);
 
-        res.status(200).json({ message: 'Subscription successful' });
+        res.status(200).json({ success: true, message: 'Subscription successful' });
     } catch (error) {
         console.error('Error saving email:', error);
         if (error.code === 11000) {
-            res.status(400).json({ message: 'Email already subscribed' });
+            res.status(400).json({ success: false, message: 'Email already subscribed' });
         } else {
-            res.status(500).json({ message: 'Internal Server Error' });
+            res.status(500).json({ success: false, message: 'Internal Server Error' });
         }
     }
 });
+
 
 app.listen(port, () => {
     console.log(`Server is running on http://localhost:${port}`);

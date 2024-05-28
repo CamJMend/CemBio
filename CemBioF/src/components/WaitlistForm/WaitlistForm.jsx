@@ -3,6 +3,7 @@ import "./WaitlistForm.css";
 
 const WaitlistForm = () => {
     const [email, setEmail] = useState('');
+    const [message, setMessage] = useState('');
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -18,16 +19,18 @@ const WaitlistForm = () => {
         .then(data => {
             console.log('Success:', data);
             setEmail('');
+            setMessage(data.message); // Establecer el mensaje del servidor
         })
         .catch((error) => {
             console.error('Error:', error);
+            setMessage('An unexpected error occurred. Please try again later.'); // Establecer un mensaje de error genérico
         });
     };
 
     return (
         <form className="form-waitlist" onSubmit={handleSubmit}>
             <h2>Waitlist</h2>
-            <p>If your company is interested in our solution, enter your email bellow to receive further information on the launch</p>
+            <p>If your company is interested in our solution, enter your email below to receive further information on the launch</p>
             <input
                 type="email"
                 value={email}
@@ -36,6 +39,7 @@ const WaitlistForm = () => {
                 required
             />
             <button type="submit">Join</button>
+            {message && <p className={message.startsWith('Error') ? 'error' : 'success'}>{message}</p>}
         </form>
     );
 };

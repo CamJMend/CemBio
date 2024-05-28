@@ -3,18 +3,17 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 const mongoose = require('mongoose');
 const nodemailer = require('nodemailer');
+//const { google } = require('google-auth-library');
+const {google} = require('googleapis');
 const Subscriber = require('./models/Subscriber');
 
 const app = express();
 const port = 5000;
 
-const dbURI = 'jjj';
+const dbURI = 'mongodb+srv://camjmend:X1Aczu92AoIvk9Ci@cembio.5muwcgy.mongodb.net/?retryWrites=true&w=majority&appName=CemBio';
 
-
-// MongoDB Atlas
 mongoose.connect(dbURI, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true
+    useNewUrlParser: true
 });
 
 const db = mongoose.connection;
@@ -26,14 +25,46 @@ db.once('open', () => {
 app.use(cors());
 app.use(bodyParser.json());
 
-// Nodemailer
-const transporter = nodemailer.createTransport({
-    service: 'gmail', 
-    auth: {
-        user: 'jjj', 
-        pass: 'jjj'
+// Configuración OAuth2
+const oAuth2Client = new google.auth.OAuth2(
+    '95388885498-nhsa5iv863ohs0evnui46fvn0c6fi4dr.apps.googleusercontent.com',
+    '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',
+    'https://developers.google.com/oauthplayground'
+);
+
+oAuth2Client.setCredentials({ refresh_token: '1//043PqzjNlTj5xCgYIARAAGAQSNwF-L9IrcJj6BExhIe6InAr2lQ46FBebum5JWxyuMRQJG2YzB9z_6KbbwlLqXYfAwbr7M1i2xOE' });
+
+async function sendEmail(email) {
+    try {
+        const accessToken = await oAuth2Client.getAccessToken();
+
+        const transport = nodemailer.createTransport({
+            service: 'gmail',
+            auth: {
+                type: 'OAuth2',
+                user: 'cembio.contact@gmail.com',
+                clientId: '95388885498-nhsa5iv863ohs0evnui46fvn0c6fi4dr.apps.googleusercontent.com',
+                clientSecret: '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',
+                refreshToken: '1//043PqzjNlTj5xCgYIARAAGAQSNwF-L9IrcJj6BExhIe6InAr2lQ46FBebum5JWxyuMRQJG2YzB9z_6KbbwlLqXYfAwbr7M1i2xOE',
+                accessToken: accessToken.token
+            }
+        });
+
+        const mailOptions = {
+            from: 'cembio.contact@gmail.com',
+            to: email,
+            subject: 'Subscription Successful',
+            text: 'Thank you for subscribing to our newsletter!',
+            html: '<h1>Thank you for subscribing to our newsletter!</h1>'
+        };
+
+        const result = await transport.sendMail(mailOptions);
+        return result;
+    } catch (error) {
+        console.error('Error sending email:', error);
+        throw new Error('Error sending email');
     }
-});
+}
 
 app.post('/api/subscribe', async (req, res) => {
     const email = req.body.email;
@@ -41,22 +72,8 @@ app.post('/api/subscribe', async (req, res) => {
     try {
         const newSubscriber = new Subscriber({ email });
         await newSubscriber.save();
-
-        // Enviar correo de agradecimiento
-        const mailOptions = {
-            from: 'cembio.contact@gmail.com', // Reemplaza con tu correo
-            to: email,
-            subject: 'Thank you for subscribing!',
-            text: 'Thank you for subscribing to our mailing list!'
-        };
-
-        transporter.sendMail(mailOptions, (error, info) => {
-            if (error) {
-                console.error('Error sending email:', error);
-            } else {
-                console.log('Email sent:', info.response);
-            }
-        });
+        
+        await sendEmail(email);
 
         res.status(200).json({ message: 'Subscription successful' });
     } catch (error) {
@@ -72,3 +89,4 @@ app.post('/api/subscribe', async (req, res) => {
 app.listen(port, () => {
     console.log(`Server is running on http://localhost:${port}`);
 });
+

@@ -7,8 +7,11 @@ const WaitlistForm = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
+        // Obtener la URL del backend desde la variable de entorno
+        const backendURL = process.env.VITE_BACKEND_URL;
+
         // Llamada a la API para enviar el correo electrónico
-        fetch('/api/subscribe', {
+        fetch(`${backendURL}/api/subscribe`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

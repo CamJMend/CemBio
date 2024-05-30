@@ -13,7 +13,7 @@ const port = 5000;
 const dbURI = 'mongodb+srv://camjmend:X1Aczu92AoIvk9Ci@cembio.5muwcgy.mongodb.net/?retryWrites=true&w=majority&appName=CemBio';
 
 const corsOptions = {
-    origin: 'https://cembio-d18a9dly6-camila-jimenezs-projects.vercel.app', // Asegúrate de que esta URL sea exacta
+    origin: 'https://cembio.vercel.app/', // Asegúrate de que esta URL sea exacta
     optionsSuccessStatus: 200
 };
 

@@ -8,7 +8,7 @@ const WaitlistForm = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         // Obtener la URL del backend desde la variable de entorno
-        const backendURL = process.env.VITE_BACKEND_URL;
+        const backendURL = 'https://cembio.onrender.com';
 
         console.log('Backend URL:', backendURL);
 

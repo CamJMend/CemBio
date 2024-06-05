@@ -14,4 +14,17 @@
     height: 60%;
     width: auto;
 }
+
+
+@media screen and (max-width: 480px) {
+    .headerCemBio{
+        height: 100px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .headerCemBio{
+        height: 110px;
+    }
+}
   

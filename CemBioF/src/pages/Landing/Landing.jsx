@@ -13,7 +13,18 @@ const Landing = () => {
 
     useEffect(() => {
         const handleScroll = () => {
-            if (window.scrollY > 760) {
+            const scrollY = window.scrollY;
+            const width = window.innerWidth;
+
+            let scrollThreshold = 730;
+
+            if (width <= 480) {
+                scrollThreshold = 500; 
+            } else if (width <= 768) {
+                scrollThreshold = 670; 
+            }
+
+            if (scrollY > scrollThreshold) {
                 transitionImageRef.current.src = image_transition2;
             } else {
                 transitionImageRef.current.src = image_transition1;
@@ -26,6 +37,7 @@ const Landing = () => {
             window.removeEventListener('scroll', handleScroll);
         };
     }, []);
+
 
     return (
         <>

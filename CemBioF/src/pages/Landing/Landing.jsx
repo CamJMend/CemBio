@@ -32,8 +32,7 @@ const Landing = () => {
             <div className='canvas'>
                 <div className="texts-landing">
                     <h1>CemBio</h1>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna 
-                        aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+                    <p>Rapid antibiotic resistance diagnosis. Get precise results in minutes.</p>
                 </div>
             </div>
             <div className="solution">
@@ -42,32 +41,32 @@ const Landing = () => {
                     <img ref={transitionImageRef} src={image_transition1} alt="Card Image 1" />
                     <div className="product-description-texts">
                         <h3>Description</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna 
-                        aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna 
-                        aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                        <p>We tackle the antibiotic resistance crisis with a colorimetric-based diagnostic kit. Our kit detects resistance in 
+                            Pseudomonas aeruginosa quickly and effortlessly.</p>
+                        <p>With CemBio, you get fast results and a tool integrated with advanced software that analyzes colorimetric results 
+                            and provides detailed information on minimum inhibitory concentration and resistance mechanisms.</p>
                         <ul>
-                            <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
-                            <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
-                            <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+                            <li>Diagnosis in minutes, reducing wait time from days to minutes.</li>
+                            <li>Easy to use, no need for sophisticated equipment.</li>
+                            <li>Detailed and precise information for more effective treatment.</li>
                         </ul>
                     </div>
                 </div>
                 <div className="cards">
                     <div className="card">
                         <img src={image_card1} alt="Card Image 1" />
-                        <h3>Title 1</h3>
-                        <p>Description 1. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        <h3>Fast and Accessible</h3>
+                        <p>Our diagnostic kit provides results in minutes, enabling quicker and more effective medical intervention.</p>
                     </div>
                     <div className="card">
                         <img src={image_card2} alt="Card Image 2" />
-                        <h3>Title 2</h3>
-                        <p>Description 2. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        <h3>Easy to Use</h3>
+                        <p>No need for expensive or sophisticated equipment, anyone can use our kit with minimal training.</p>
                     </div>
                     <div className="card">
                         <img src={image_card3} alt="Card Image 3" />
-                        <h3>Title 3</h3>
-                        <p>Description 3. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        <h3>Advanced Analysis</h3>
+                        <p>Our software provides a deep understanding of bacterial resistance, informing about minimum inhibitory concentration and resistance mechanisms.</p>
                     </div>
                 </div>
             </div>

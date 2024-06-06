@@ -16,7 +16,7 @@ const Landing = () => {
             const scrollY = window.scrollY;
             const width = window.innerWidth;
 
-            let scrollThreshold = 730;
+            let scrollThreshold = 750;
 
             if (width <= 480) {
                 scrollThreshold = 500; 

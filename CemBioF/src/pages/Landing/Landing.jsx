@@ -44,7 +44,7 @@ const Landing = () => {
             <div className='canvas'>
                 <div className="texts-landing">
                     <h1>CemBio</h1>
-                    <p>Rapid antibiotic resistance diagnosis. Get precise results in minutes.</p>
+                    <p>Quick AI tests for antibiotic resistance</p>
                 </div>
             </div>
             <div className="solution">
@@ -55,7 +55,7 @@ const Landing = () => {
                         <h3>Description</h3>
                         <p>We tackle the antibiotic resistance crisis with a colorimetric-based diagnostic kit. Our kit detects resistance in 
                             Pseudomonas aeruginosa quickly and effortlessly.</p>
-                        <p>With CemBio, you get fast results and a tool integrated with advanced software that analyzes colorimetric results 
+                        <p>With CemBio, you get fast results and a tool integrated with a software that analyzes colorimetric results 
                             and provides detailed information on minimum inhibitory concentration and resistance mechanisms.</p>
                         <ul>
                             <li>Diagnosis in minutes, reducing wait time from days to minutes.</li>

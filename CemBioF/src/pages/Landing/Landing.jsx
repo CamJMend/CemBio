@@ -4,7 +4,7 @@ import WaitlistForm from '../../components/WaitlistForm/WaitlistForm';
 import image_card1 from "../../assets/images/CardImage1.png";
 import image_card2 from "../../assets/images/CardImage2.png";
 import image_card3 from "../../assets/images/CardImage3.png";
-import video from "../../assets/videos/SoftPrototype.mp4";
+import video from "../../assets/videos/DemoVideoCemBio.mp4";
 import image_transition1 from "../../assets/images/Transition1.png";
 import image_transition2 from "../../assets/images/Transition2.png";
 
